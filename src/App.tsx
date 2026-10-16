@@ -212,9 +212,11 @@ export default function App() {
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
                 <span>Як застосувати налаштування в Telegram:</span>
               </div>
-              <ol className="list-decimal list-inside space-y-1 text-slate-400">
+              <ol className="list-decimal list-inside space-y-1.5 text-slate-400">
                 <li>Додайте бота як адміна у ваш канал (дозвіл на надсилання).</li>
-                <li>Надішліть команди по черзі у приватні повідомлення боту.</li>
+                <li>
+                  <strong className="text-amber-300">Надсилайте команди ТІЛЬКИ по черзі</strong> (кожну окремим повідомленням) у приватний діалог з ботом.
+                </li>
                 <li>При зміні графіків бот автоматично опублікує пост із заданим форматуванням.</li>
               </ol>
             </div>

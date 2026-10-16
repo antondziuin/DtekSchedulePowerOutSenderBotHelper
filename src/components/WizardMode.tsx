@@ -25,6 +25,7 @@ import {
   FileCode,
   RotateCcw,
   Search,
+  AlertTriangle,
 } from 'lucide-react';
 
 interface WizardModeProps {
@@ -869,27 +870,33 @@ export const WizardMode: React.FC<WizardModeProps> = ({
                 </div>
               </div>
 
-              <button
-                type="button"
-                onClick={handleCopyAll}
-                className={`w-full sm:w-auto px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg ${
-                  copiedAll
-                    ? 'bg-emerald-500 text-slate-950'
-                    : 'bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-amber-500/20'
-                }`}
-              >
-                {copiedAll ? (
-                  <>
-                    <Check className="w-4 h-4" />
-                    <span>Всі команди скопійовано!</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-4 h-4" />
-                    <span>Скопіювати всі команди разом</span>
-                  </>
-                )}
-              </button>
+              <div className="flex flex-col items-end gap-1 w-full sm:w-auto">
+                <button
+                  type="button"
+                  onClick={handleCopyAll}
+                  className={`w-full sm:w-auto px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg ${
+                    copiedAll
+                      ? 'bg-emerald-500 text-slate-950'
+                      : 'bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-slate-600'
+                  }`}
+                  title="Скопіювати всі рядки в буфер обміну для збереження в блокнот"
+                >
+                  {copiedAll ? (
+                    <>
+                      <Check className="w-4 h-4 text-emerald-950" />
+                      <span>Скопійовано для нотаток!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-4 h-4" />
+                      <span>Скопіювати всі (для нотаток)</span>
+                    </>
+                  )}
+                </button>
+                <span className="text-[10px] text-amber-400/90 font-medium text-center sm:text-right">
+                  * у бот надсилайте тільки по черзі
+                </span>
+              </div>
             </div>
 
             {/* 3 Step Action Guide */}
@@ -925,16 +932,28 @@ export const WizardMode: React.FC<WizardModeProps> = ({
                     </a>
                   </p>
                 </li>
-                <li className="bg-slate-900 border border-slate-800/80 rounded-xl p-3 space-y-1">
+                <li className="bg-slate-900 border border-slate-800/80 rounded-xl p-3 space-y-1.5">
                   <div className="font-bold text-amber-400 flex items-center gap-1.5">
-                    <span>3. Надішліть команди</span>
+                    <span>3. Надішліть команди ТІЛЬКИ по черзі</span>
                   </div>
-                  <p className="text-[11px] text-slate-400">
-                    Скопіюйте команди нижче та надішліть боту по черзі або всі разом. Бот підтвердить
-                    налаштування!
+                  <p className="text-[11px] text-slate-300">
+                    Скопіюйте кожну команду нижче та надсилайте боту <strong className="text-amber-300">виключно по черзі</strong> (кожну окремим повідомленням).
                   </p>
                 </li>
               </ol>
+            </div>
+
+            {/* Warning banner */}
+            <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-3 flex items-start gap-2.5 text-amber-200">
+              <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+              <div className="text-xs space-y-0.5">
+                <span className="font-bold text-amber-300">
+                  Правило введення: тільки по черзі
+                </span>
+                <p className="text-amber-200/80 text-[11px] leading-relaxed">
+                  Натискайте кнопку «Копіювати» навпроти кожної команди по одній та надсилайте в діалог з ботом окремими повідомленнями.
+                </p>
+              </div>
             </div>
 
             {/* Generated Commands List */}
@@ -1050,14 +1069,15 @@ export const WizardMode: React.FC<WizardModeProps> = ({
             <ArrowRight className="w-4 h-4" />
           </button>
         ) : (
-          <button
-            type="button"
-            onClick={handleCopyAll}
-            className="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 flex items-center gap-2 transition-all cursor-pointer shadow-lg shadow-emerald-500/20"
+          <a
+            href="https://t.me/DtekSchedulePowerOutSenderBot"
+            target="_blank"
+            rel="noreferrer"
+            className="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-sky-500 hover:bg-sky-400 text-slate-950 flex items-center gap-2 transition-all cursor-pointer shadow-lg shadow-sky-500/20"
           >
-            <CheckCircle2 className="w-4 h-4" />
-            <span>Скопіювати всі команди</span>
-          </button>
+            <Send className="w-4 h-4" />
+            <span>Відкрити бота в Telegram →</span>
+          </a>
         )}
       </div>
     </div>

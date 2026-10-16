@@ -89,12 +89,12 @@ export const CommandOutput: React.FC<CommandOutputProps> = ({ config }) => {
             {copiedAll ? (
               <>
                 <Check className="w-3.5 h-3.5 text-emerald-400" />
-                <span className="text-emerald-400">Усі команди скопійовано!</span>
+                <span className="text-emerald-400">Скопійовано (для нотаток)!</span>
               </>
             ) : (
               <>
                 <Copy className="w-3.5 h-3.5" />
-                <span>Скопіювати всі</span>
+                <span>Скопіювати всі (для нотаток)</span>
               </>
             )}
           </button>
@@ -114,16 +114,16 @@ export const CommandOutput: React.FC<CommandOutputProps> = ({ config }) => {
       {/* Strict warning callout */}
       <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-3 sm:p-3.5 flex items-start gap-2.5 text-amber-200">
         <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-        <div className="text-xs space-y-0.5">
-          <span className="font-bold text-amber-300">
-            ВАЖЛИВО: Кожен рядок потрібно вводити ботові окремим повідомленням!
+        <div className="text-xs space-y-1">
+          <span className="font-bold text-amber-300 flex items-center gap-1">
+            ⚠️ ВАЖЛИВО: Команди можна вводити ТІЛЬКИ ПО ЧЕРЗІ!
           </span>
-          <p className="text-amber-200/80 leading-relaxed">
-            Скопіюйте команду №1, надішліть боту{' '}
-            <code className="text-white bg-black/30 px-1 py-0.5 rounded">
+          <p className="text-amber-200/90 leading-relaxed">
+            Кожну команду потрібно надсилати боту{' '}
+            <code className="text-white bg-black/30 px-1 py-0.5 rounded font-mono">
               @DtekSchedulePowerOutSenderBot
-            </code>
-            , дочекайтеся відповіді або одразу надішліть наступну окремим повідомленням.
+            </code>{' '}
+            <strong>виключно окремим повідомленням</strong>, одну за одною. Якщо надіслати всі команди разом одним текстом — бот їх не обробить і не збереже налаштування.
           </p>
         </div>
       </div>
