@@ -1,0 +1,6 @@
+{
+  "name": "Конструктор сповіщень ДТЕК & СвітлоБот",
+  "description": "Зручний інтерактивний конструктор шаблонів та команд для бота @DtekSchedulePowerOutSenderBot з live-попереднім переглядом у стилі Telegram",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

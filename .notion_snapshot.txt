@@ -1,0 +1,90 @@
+### Page
+- Page URL: https://world-wide-web.notion.site/DtekSchedulePowerOutSenderBot-2b04e9eac65a806dadd8ead3c49b410f
+- Page Title:  Налаштування DtekSchedulePowerOutSenderBot
+- Console: 7 errors, 1 warnings
+### Snapshot
+```yaml
+- generic [ref=e5]:
+  - generic [ref=e7]:
+    - link "Skip to content" [ref=e9] [cursor=pointer]:
+      - /url: "#main"
+    - generic [ref=e14]:
+      - banner [ref=e15]
+      - main [ref=e17]:
+        - generic [ref=e22]:
+          - heading "💡 Налаштування DtekSchedulePowerOutSenderBot" [level=1] [ref=e57]:
+            - img "💡" [ref=e58]
+            - text: Налаштування DtekSchedulePowerOutSenderBot
+          - table "Page properties" [ref=e65]:
+            - row "Теги" [ref=e67]
+            - row "URL" [ref=e93]
+            - row "Description" [ref=e114]
+            - row "Edited" [ref=e135]
+            - row "Created" [ref=e156]
+            - row "Пройшло днів" [ref=e177]
+            - row "Files" [ref=e201]
+            - row "Due date" [ref=e223]
+          - generic [ref=e244]:
+            - generic [ref=e250]
+            - heading "⚠️ Критично важливі вимоги" [level=2] [ref=e256]
+            - note [ref=e259]
+            - heading "Швидке налаштування (без пояснень)" [level=2] [ref=e317]
+            - generic [ref=e321]
+            - generic [ref=e332]
+            - heading "🆔 Крок 1. Отримання ID вашого каналу" [level=2] [ref=e350]
+            - generic [ref=e358]
+            - generic [ref=e363]
+            - generic [ref=e373]
+            - separator [ref=e388]
+            - heading "🌍 Крок 2. Вибір регіону та черги" [level=2] [ref=e393]
+            - generic [ref=e406]
+            - generic [ref=e414]: "Коди регіонів:"
+            - table [ref=e430]
+            - generic [ref=e581]: "Приклад (Київська область, черга 2.2):"
+            - figure [ref=e589]
+            - generic [ref=e607]
+            - figure [ref=e612]
+            - separator [ref=e627]
+            - heading "🎨 Крок 3. Налаштування зовнішнього вигляду" [level=2] [ref=e632]
+            - heading "1. Форматування часу (Leading Symbol)" [level=3] [ref=e639]
+            - generic [ref=e651]
+            - generic [ref=e658]
+            - table [ref=e671]
+            - heading "2. Шаблон заголовка (Header)" [level=3] [ref=e700]
+            - generic [ref=e712]
+            - generic [ref=e720]: "Ви можете використовувати змінні:"
+            - table [ref=e736]
+            - generic [ref=e814]: "Приклад готового шаблону:"
+            - figure [ref=e822]
+            - generic [ref=e834]
+            - heading "3. Шаблон рядка часу (Period Template)" [level=3] [ref=e846]
+            - generic [ref=e858]
+            - table [ref=e876]
+            - generic [ref=e909]: "Приклад готового шаблону:"
+            - figure [ref=e917]
+            - generic [ref=e924]: "Виведе:"
+            - generic [ref=e935]
+            - separator [ref=e947]
+            - heading "🔌 Крок 4. Інтеграція зі СвітлоБот (картинки на каналі)" [level=2] [ref=e952]
+            - generic [ref=e959]
+            - generic [ref=e970]
+            - figure [ref=e978]
+            - generic [ref=e994]
+            - figure [ref=e1002]
+            - separator [ref=e1017]
+            - heading "🛠 Додаткові параметри" [level=2] [ref=e1022]
+            - generic [ref=e1025]: "Ці параметри можна додавати в кінці команди реєстрації:"
+            - table [ref=e1041]
+            - heading "Повне видалення підписки" [level=3] [ref=e1082]
+            - generic [ref=e1083]: "Якщо ви хочете, щоб бот перестав слати графіки в канал:"
+            - figure [ref=e1091]
+            - generic [ref=e1103]
+            - separator [ref=e1113]
+            - heading "🧪 Режим тестування" [level=2] [ref=e1118]
+            - generic [ref=e1125]
+            - generic [ref=e1138]
+  - status [ref=e1141]
+  - alert [ref=e1142]
+```
+### Events
+- New console entries: .playwright-cli/console-2026-10-15T22-37-06-687Z.log#L4-L41
