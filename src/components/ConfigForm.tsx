@@ -177,8 +177,8 @@ export const ConfigForm: React.FC<ConfigFormProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* Region */}
           <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
-              <MapPin className="w-3.5 h-3.5 text-amber-400" />
+            <label className="text-xs font-semibold text-slate-300 flex items-center gap-1.5 h-6">
+              <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
               <span>Область / Оператор (код):</span>
             </label>
             <select
@@ -189,7 +189,7 @@ export const ConfigForm: React.FC<ConfigFormProps> = ({
                 const defaultGrp = regInfo && regInfo.defaultGroups[0] ? regInfo.defaultGroups[0] : '1.1';
                 onChange({ ...config, region: newReg, group: defaultGrp });
               }}
-              className="w-full bg-slate-800/90 border border-slate-700 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 rounded-xl px-3 py-2 text-white text-xs sm:text-sm transition-all outline-none cursor-pointer"
+              className="w-full h-10 bg-slate-800/90 border border-slate-700 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 rounded-xl px-3.5 py-2 text-white text-xs sm:text-sm transition-all outline-none cursor-pointer"
             >
               {UKRAINE_REGIONS.map((r) => (
                 <option key={r.code} value={r.code}>
@@ -201,29 +201,16 @@ export const ConfigForm: React.FC<ConfigFormProps> = ({
 
           {/* Group / Queue */}
           <div className="space-y-1.5">
-            <div className="flex items-center justify-between">
-              <label className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
-                <Users className="w-3.5 h-3.5 text-amber-400" />
-                <span>Черга (група відключень):</span>
-              </label>
-              {config.region === 'k' && onOpenKyivFinder && (
-                <button
-                  type="button"
-                  onClick={onOpenKyivFinder}
-                  className="text-xs text-emerald-400 hover:text-emerald-300 hover:underline flex items-center gap-1 font-semibold cursor-pointer"
-                  title="Отримати групу за адресою на порталі YASNO"
-                >
-                  <Search className="w-3 h-3" />
-                  <span>Пошук за адресою</span>
-                </button>
-              )}
-            </div>
+            <label className="text-xs font-semibold text-slate-300 flex items-center gap-1.5 h-6">
+              <Users className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+              <span>Черга (група відключень):</span>
+            </label>
             <input
               type="text"
               value={config.group}
               onChange={(e) => update('group', e.target.value.trim())}
               placeholder="наприклад: 20.1 або 4.1"
-              className="w-full bg-slate-800/90 border border-slate-700 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 rounded-xl px-3 py-2 text-white font-mono text-sm transition-all outline-none"
+              className="w-full h-10 bg-slate-800/90 border border-slate-700 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 rounded-xl px-3.5 py-2 text-white font-mono text-sm transition-all outline-none"
             />
           </div>
         </div>
@@ -240,9 +227,11 @@ export const ConfigForm: React.FC<ConfigFormProps> = ({
                 <button
                   type="button"
                   onClick={onOpenKyivFinder}
-                  className="text-emerald-400 hover:underline cursor-pointer"
+                  className="text-emerald-400 hover:text-emerald-300 hover:underline flex items-center gap-1 font-semibold cursor-pointer"
+                  title="Отримати чергу за адресою на порталі YASNO"
                 >
-                  🔍 Дізнатися групу будинку за адресою
+                  <Search className="w-3 h-3" />
+                  <span>Дізнатися групу будинку за адресою</span>
                 </button>
               )}
             </div>

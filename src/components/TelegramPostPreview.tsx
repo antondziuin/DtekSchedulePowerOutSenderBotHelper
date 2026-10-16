@@ -130,7 +130,7 @@ export const TelegramPostPreview: React.FC<TelegramPostPreviewProps> = ({ config
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              Обидва дні (як на фото)
+              Обидва дні (Сьогодні + Завтра)
             </button>
             <button
               type="button"

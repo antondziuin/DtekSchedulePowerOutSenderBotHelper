@@ -64,6 +64,7 @@ export const PresetsModal: React.FC<PresetsModalProps> = ({
                   <div className="bg-[#18222d] border border-[#243343] rounded-lg p-3 text-xs text-[#f5f5f5] mb-4 space-y-1">
                     <TelegramHtmlView
                       html={preset.headerTemplate
+                        .replace('{group}', '1.1')
                         .replace('{dd}', 'сьогодні')
                         .replace('{d}', '15.03.2026')
                         .replace('{dm}', '15.03')

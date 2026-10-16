@@ -392,9 +392,6 @@ export const WizardMode: React.FC<WizardModeProps> = ({
                       <MapPin className="w-4 h-4 text-emerald-400" />
                       <span>Знайти чергу за адресою у Києві (YASNO)</span>
                     </span>
-                    <span className="text-[10px] bg-emerald-500/20 text-emerald-300 font-bold px-2 py-0.5 rounded-full border border-emerald-500/30">
-                      60 груп
-                    </span>
                   </div>
                   <p className="text-xs text-slate-300 leading-relaxed">
                     Введіть вашу вулицю та номер будинку — система автоматично знайде точну чергу серед усіх 60 груп Києва через API YASNO.
@@ -570,7 +567,7 @@ export const WizardMode: React.FC<WizardModeProps> = ({
             </div>
 
             {/* Preset Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[560px] overflow-y-auto pr-1">
               {TEMPLATE_PRESETS.map((preset) => {
                 const isSelected =
                   config.headerTemplate === preset.headerTemplate &&
@@ -670,7 +667,7 @@ export const WizardMode: React.FC<WizardModeProps> = ({
                   <p className="text-[11px] text-slate-400">
                     {config.leadingZero === '0'
                       ? 'З провідним нулем (наприклад: 09:00 - 13:00)'
-                      : 'Без нуля, як на ваших фото (наприклад: 9:00 - 13:00)'}
+                      : 'Без провідного нуля (наприклад: 9:00 - 13:00)'}
                   </p>
                 </div>
                 <div className="flex bg-slate-900 border border-slate-700 rounded-lg p-0.5 shrink-0">
